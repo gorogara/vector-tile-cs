@@ -16,8 +16,9 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-
-            var fileBytes = File.ReadAllBytes("188.vector.pbf");
+            var solutionPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+            var pbfPath = Path.Combine(solutionPath, "Data\\188.vector.pbf");
+            var fileBytes = File.ReadAllBytes(pbfPath);
             var pbf = new PbfReader(fileBytes);
             int a = 0;
             
